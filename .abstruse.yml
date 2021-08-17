@@ -1,0 +1,12 @@
+image: mrcyjanek/goprod:core-linux
+
+script:
+  - rm -rf /buildreal/* || true
+  - cp /build/build.sh /buildreal/build.sh && cp /build/icons/ /buildreal/icons -r
+  - echo "Building for amd64:$TAG"
+  - cd /buildreal && ./build.sh v0.17.2.2 x86_64
+  - echo "Building for arm64:$TAG"
+  - rm -rf /buildreal/* || true
+  - cp /build/build.sh /buildreal/build.sh && cp /build/icons/ /buildreal/icons -r
+  - cd /buildreal && ./build.sh v0.17.2.2 aarch64
+  - rm -rf /buildreal/* || true
