@@ -7,6 +7,6 @@ script:
   - cd /buildreal && ./build.sh v0.17.2.2 x86_64
   - echo "Building for arm64:$TAG"
   - rm -rf /buildreal/* || true
-  - cp /build/build.sh /buildreal/build.sh && cp /build/icons/ /buildreal/icons -r
+  - cp /build/build.sh /buildreal/build.sh && cp /build/icons/ /buildreal/icons -r && cp /build/Dockerfile.arm64.linux /buildreal/Dockerfile.arm64.linux
   - cd /buildreal && ./build.sh v0.17.2.2 aarch64
   - rm -rf /buildreal/* || true
