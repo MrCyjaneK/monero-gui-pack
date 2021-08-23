@@ -23,6 +23,7 @@ then
 fi
 if [[ "$ARCH" == "aarch64" ]];
 then
+    cp ../Dockerfile.arm64.linux Dockerfile.linux
     DOCKERARCH="arm64"
     COMBOARCH="arm64"
 fi
